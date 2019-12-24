@@ -8,6 +8,8 @@ import { HeaderComponent } from './header/header.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
 import { TodoDetailsComponent } from './todo-details/todo-details.component';
 import { CategoriesComponent } from './categories/categories.component';
+import { NewStyleDirective } from './directives/new-style.directive';
+import { ShotenPipe } from './pipes/shoten.pipe';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { CategoriesComponent } from './categories/categories.component';
     HeaderComponent,
     TodoListComponent,
     TodoDetailsComponent,
-    CategoriesComponent
+    CategoriesComponent,
+    NewStyleDirective,
+    ShotenPipe
     
   ],
   imports: [
