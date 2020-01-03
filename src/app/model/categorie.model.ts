@@ -1,9 +1,10 @@
 export class Categorie {
-    public id:Number;
+    static _id :number=1 ;
+    public id : any;
     public value: string;
     public description:string ;
     constructor(id:Number,value?: string,description?:string){
-        this.id=id;
+        this.id= Categorie._id++;
         this.value=value;
         this.description=description;
     }

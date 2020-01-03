@@ -1,36 +1,29 @@
-<p appNewStyle>test</p>
+
 <div class="container">
    
     <div *ngIf="todos.length >0">
     <div *ngFor='let td of todos;let i=index'>
-      <a href='#' class="list-group-item clearfix"> {{td.description}} : {{td.category.value |uppercase}} 
-       <div class="pull-left">
+      <a href='#' class="list-group-item clearfix"> {{td.description}} : {{td.category?.value |uppercase}} 
+      </a> <div class="pull-left">
        <app-todo-details [todo]='td'></app-todo-details>
        </div>   
-      </a> 
+       
       
-    </div></div>
-<div>
+    </div></div></div>
+<!--div >
   
   Task Name : <input type='text' placeholder="Your Task"  [(ngModel)]="todoTask.name"><br>
   Task description :<textarea type='text' rows="5" cols="10"  placeholder="Detail of your task " [(ngModel)]="todoTask.description"></textarea><br>
 
-  Category :<select   [(ngModel)]="todoTask.category">
-  <option *ngFor='let c of categorie' [ngValue]="c.value" >
+  Category :<select--   [(ngModel)]="todoTask.category">
+  <option *ngFor='let c of categories' [ngValue]="c.value" >
       {{c.value}}
   </option></select> <br>
-  <!--app-category [(ngModel)]="category.category" ></!--app-category-->
 
-<button  (click)='AddNewTask()'> Add Todo task </button></div>
+>  <app-category [(ngModel)]="category.category" ></!--app-category>
 
-  <!--mat-list>
-    <h3 mat-subheader>Task</h3>
-    <mat-list-item *ngFor="let td of todos;let i=index">
-      <mat-icon mat-list-icon>folder</mat-icon>
-      <h4 mat-line>{{td.category}}</h4>
-      <p mat-line> {{td.status}} </p>
-    </mat-list-item>
-    <mat-divider></mat-divider> 
-  </!--mat-list -->
-</div>
+<button  (click)='AddNewTask()'> Add Todo task </button></div -->
+<!--app-todo-add ></!--app-todo-add-->
+ <button class="btnClass" (click)="onLoadServer()"> add new task</button>
+
 

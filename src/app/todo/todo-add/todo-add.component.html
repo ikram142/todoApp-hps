@@ -1,0 +1,19 @@
+
+<div class='divClass'>
+<form (ngSubmit)="onSubmit(f)" #f="ngForm">
+  Task Name : <input type='text' minlength="3" placeholder="Your Task"  ngModel name="name" required><br>
+ 
+  Task description :<textarea type='text' rows="5" cols="10"  placeholder="Detail of your task"
+   ngModel name="description" required></textarea><br>
+
+  Category :<select   ngModel name="category">
+  <option *ngFor='let c of categories' [ngValue]="c" required>
+      {{c.value}}
+  </option></select> <br>
+  <button class="btnClass"  type='submit'  [disabled]="!f.valid"> Add new Task</button>
+</form>
+
+  
+
+
+</div>

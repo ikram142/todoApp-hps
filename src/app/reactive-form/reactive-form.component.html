@@ -1,0 +1,57 @@
+
+<form [formGroup]="signupFrom" (ngSubmit)="onSubmit()"> 
+  <div class="form-group" > 
+  <div class="row" ><label class="col-4"> Username : </label>
+  <input class="col-4" type="text" 
+  id="username" 
+  formControlName="username"  placeholder="username"
+  class="form-control"> </div>
+  <label> Email : </label><input 
+  type="email" 
+  id="email" 
+  formControlName="email" placeholder='email'
+  class="form-control"> 
+  <div class="form-control" *ngFor="let g of genders"> 
+    <label>
+      <input type="radio" name="gender" formControlName="gender"  [value]=g.value>{{g.value}}
+    </label> 
+    </div> 
+  <button class="btnClass"  type='submit' [disabled]="!signupFrom.valid" >add</button>
+  </div> 
+  
+  <span 
+	*ngIf="!signupFrom.get('username').valid && signupFrom.get('username').touched" 
+		class="help-block">
+Please enter a valid username
+</span> 
+
+<!-- Hobbies-->
+<div formArrayName="hobbies"> 
+  <h4>Your hobbies</h4> 
+  <button placeholder='Your Hobbies' class="btn btn-default" type="button" (click)="onAddHobby()">
+  Add Hobby</button> 
+  <div class="form-group" *ngFor="let hobby of getControls(); let i=index"> 
+    <input type="text" class="form-control" [formControlName]="i"> 
+  </div> 
+  </div> 
+  
+<!-- end Hobbies-->
+<!-- Your experience  -->
+<button class="btn btn-default" type="button" (click)="onAddEx()">Add Experience</button> 
+<div formArrayName="experiences" *ngFor="let exp of getControlsEx(); let i=index"> 
+
+  <div class="form-group"  [formGroupName]="i"> 
+   
+    <input type="text" placeholder="profession" class="form-control" [formControlName]="profession"> 
+    <input type="date" placeholder="date" class="form-control" [formControlName]="date"> 
+  </div> 
+</div>
+<!--end Your experience -->
+  </form> 
+  <br><br>
+ 
+ <!----> 
+
+  
+ 
+    

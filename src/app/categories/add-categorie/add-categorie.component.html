@@ -1,0 +1,6 @@
+<form (ngSubmit)="onSubmit(f)" #f="ngForm" >
+ Name : <input required type='text' ngModel name='value'> <br><br>
+ Description : <input required type='text' ngModel name='description'> <br><br>
+  <button class='btnClass' type='submit' [disabled]="!f.valid">Add new categorie</button>
+</form>
+
